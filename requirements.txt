@@ -5,5 +5,4 @@ wget
 pandas_ta
 pandas
 numpy
-matplotlib
 sklearn
