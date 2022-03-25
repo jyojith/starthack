@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 from flask import Flask, request, jsonify
-import matplotlib.pyplot as plt
 import json
 from sklearn import linear_model
 

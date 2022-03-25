@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import json
 import sys
+import requests
 sys.path.append('./lib')
 import regression as reg
 
@@ -20,6 +21,9 @@ def home():
 
 @app.route('/api')
 def api(target=1000):
+    url = "https://storageapi.fleek.co/987b8a92-ce10-4962-babf-e958d970ddac-bucket/sensor_data/data.csv"
+    r = requests.get(url)
+    open('data.csv', 'wb').write(r.content)
     result = reg.regression("./data.csv",50,target)
     print(result)
     return result
