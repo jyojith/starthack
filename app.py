@@ -19,8 +19,8 @@ def home():
     return jsonify({"Message":"This is your flask app with docker"})
 
 @app.route('/api')
-def api():
-    result = reg.regression("./data.csv",50,2000)
+def api(target=1000):
+    result = reg.regression("./data.csv",50,target)
     print(result)
     return result
 
